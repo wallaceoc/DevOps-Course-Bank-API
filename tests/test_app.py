@@ -14,8 +14,8 @@ def client():
 
 
 def test_account_creation(client: FlaskClient):
-    # Use the client to make requests e.g.:
-    # client.post(...)
-    # client.get(...)
+    # Use the client to make requests to the Flask app.
+    # response = client.get('/example/route')
+    # Or use client.post to make a POST request
     # https://flask.palletsprojects.com/en/1.1.x/testing/
     pass

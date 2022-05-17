@@ -62,6 +62,14 @@ Write an integration test in `test_app.py` that uses the client fixture to send 
 
 Expand your integration test to also check you can query the created account via the `Accounts` resource GET endpoint (i.e. a GET request to the same path)
 
+<details markdown="1"><summary>Hint for making assertions about the response</summary>
+
+The result of `client.get` or `client.post` is a test response object, containing all the things you would expect from an HTTP response. Two attributes you probably want to look at are:
+- `status_code` - a number, e.g. 200 for a status of "OK".
+- `data` - the response body. This is a byte array rather than a string, because not all HTTP bodies just hold text. So you have to either compare it to another byte array in your assertion, or convert it to a string first: `response.data.decode()`
+
+</details>
+
 ## Stretch Goals
 
 ### New feature with TDD and mocking
@@ -117,7 +125,6 @@ def test_bank_report(monkeypatch):
 1. Re-write your `BankReport` unit tests to mock the relevant Bank methods and attributes.
     * This will need to include `get_account` and `transactions`
 1. Make a temporary edit to your code that breaks the `Bank` class. Re-run your unit tests to check that the `Bank` unit tests fail and the BankReport unit tests pass.
-
 
 ### Move money between accounts
 
