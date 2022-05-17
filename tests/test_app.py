@@ -4,13 +4,15 @@ from flask.testing import FlaskClient
 from flask.wrappers import Response
 import pytest
 
-from bank_api.app import app
+from bank_api.app import create_app
 
 
 @pytest.fixture
 def client():
+    app = create_app()
     app.config['TESTING'] = True
-    return app.test_client()
+    with app.test_client() as test_client:
+        yield test_client
 
 
 def test_account_creation(client: FlaskClient):

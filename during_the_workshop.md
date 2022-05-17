@@ -48,7 +48,7 @@ Look at the tests in `/tests/test_bank.py`. They do a good job of covering the a
 
 ## Codebase Tour - app.py and flask-restx
 
-The `app.py` file configures Flask and defines the API endpoints. For this exercise we’re using a second library, `flask-restx`, to enhance flask with functionality that's helpful for writing a REST JSON API. This includes automatically returning responses as JSON, and other bells and whistles like the swagger documentation already seen.
+The `app.py` file configures Flask and defines the API endpoints. For this exercise we’re using a second library, `flask-restx`, to enhance flask with functionality that's helpful for writing a REST JSON API. This includes automatically returning responses as JSON, and other bells and whistles like the Swagger documentation already seen.
 
 You don't need to learn the details of `flask-restx` (see the [docs](https://flask-restx.readthedocs.io/en/latest/) if you're interested), but it's useful to recap how the routes are structured as it's a bit different to vanilla flask. This may look a little odd, but give it a try and you'll find it's a very sensible way of doing things for a REST API! The Products class could be expanded with other methods (e.g. `post()`, `patch()`, `put()`, `delete()`) to handle additional HTTP methods.
 
@@ -58,7 +58,7 @@ You now have a complete unit test suite for the Bank class, but what about all t
 
 Unfortunately, the previous developer didn't care much for integration tests. You'll need to write them. You don't need loads of integration tests, perhaps just one or two in this case. Integration tests check that the components of the system work together correctly. They don't need to handle every single edge case - that's a job for unit testing.
 
-Write an integration test in `test_app.py` that uses the client fixture to send a request to the `Accounts` resource POST endpoint (i.e. a POST request to `/accounts/<account name here>`). Check the response status code and body to ensure the item was created correctly.
+Write an integration test in `test_app.py` that uses the client fixture to send a request to the `Accounts` resource POST endpoint (i.e. a POST request to `/accounts/<account name here>`). Check the response status code and body to ensure the item was created correctly. Instead of trying to understand the `app.py` file you should be able to find everything you need to know from the interactive Swagger site. 
 
 Expand your integration test to also check you can query the created account via the `Accounts` resource GET endpoint (i.e. a GET request to the same path)
 
