@@ -20,6 +20,12 @@
             ],
             "jinja": true,
             "justMyCode": true
-        }
+        },
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "test",
+            "console": "integratedTerminal"
+            }
     ]
 }
