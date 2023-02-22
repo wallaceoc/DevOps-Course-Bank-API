@@ -23,12 +23,12 @@ $ poetry run pytest
 > ================== test session starts ================== 
 > platform darwin -- Python 3.8.1, pytest-5.4.2, py-1.8.1, pluggy-0.13.1
 > rootdir: /Users/robowe/Academy/DevOps-Course-TDD
-> collected 6 items
+> collected 5 items
 > 
 > tests/test_app.py .                              [ 16%]
-> tests/test_bank.py .....                         [100%]
+> tests/test_bank.py ....                          [100%]
 > 
-> ================== 6 passed in 0.15s ==================
+> ================== 5 passed in 0.26s ==================
 ```
 
 Try reading the tests in /tests/test_bank.py and understand how they work. Each function beginning with "test_" is a test. When a test has a parameter (like these all have a parameter called `bank`), then pytest will provide a value for it. In this case, there is a pytest "fixture" defined at the top of the file, also called `bank`. Because the two names match, pytest runs that fixture function before each test to provide each test with its own independent, empty instance of `Bank`.
