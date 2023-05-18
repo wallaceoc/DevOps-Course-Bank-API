@@ -6,7 +6,7 @@ Read through this file to get the project running and then follow the instructio
 
 ## Setup
 
-This project requires Python 3.7 (or higher) and uses Poetry for Python to handle dependencies. Follow the instructions 
+This project requires Python 3.8 (or higher) and uses Poetry for Python to handle dependencies. Follow the instructions 
 [here](https://python-poetry.org/docs/#installation) to set up Poetry.
 
 Run the following command (run from the project root) to install project dependencies:
